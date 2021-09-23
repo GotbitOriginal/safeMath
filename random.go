@@ -7,8 +7,8 @@ import (
 
 func RandomInt(min, max int) int {
 	rand.Seed(time.Now().UTC().UnixNano())
-	if min > max {
-		return min
+	if min >= max {
+		return max
 	} else {
 		return rand.Intn(max-min+1) + min
 	}
@@ -16,8 +16,8 @@ func RandomInt(min, max int) int {
 
 func RandomFloat(min, max float64) float64 {
 	rand.Seed(time.Now().UTC().UnixNano())
-	if min > max {
-		return min
+	if min >= max {
+		return max
 	} else {
 		return rand.Float64()*(max-min) + min
 	}
@@ -28,8 +28,8 @@ func RandomFloatRound(min, max, prec float64) float64 {
 
 	answer := 0.0
 
-	if min > max {
-		answer = Round(min, prec)
+	if min >= max {
+		answer = Round(max, prec)
 	} else {
 		answer = Round(rand.Float64()*(max-min)+min, prec)
 	}

@@ -1,6 +1,6 @@
 package safemath
 
-func RandTimeSleep(timeMax float64, timeMin float64) float64 {
+func RandTimeSleep(timeMin float64, timeMax float64) float64 {
 	if timeMax == 0 && timeMin == 0 {
 		return 0
 	}
@@ -9,7 +9,7 @@ func RandTimeSleep(timeMax float64, timeMin float64) float64 {
 		return timeMax
 	}
 
-	randTime := RandomFloatRound(timeMin, timeMax, 2)
+	randTime := RandomFloatRound(timeMin, timeMax, 3)
 
 	return randTime
 }
