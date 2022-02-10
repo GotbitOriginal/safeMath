@@ -7,3 +7,11 @@ func PercentProbability(percent int) int {
 
 	return -1
 }
+
+func PercentProbabilityFloat(percent float64) float64 {
+	if RandomFloat(0, 100) < percent {
+		return 1
+	}
+
+	return -1
+}
